@@ -4,18 +4,28 @@
   "info": {
     "singularName": "team",
     "pluralName": "teams",
-    "displayName": "Teams"
+    "displayName": "Team",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "TeamName": {
+    "teamName": {
       "type": "string"
     },
-    "FoundedIn": {
+    "foundedIn": {
       "type": "integer"
+    },
+    "teamId": {
+      "type": "uid"
+    },
+    "players": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::player.player",
+      "mappedBy": "team_id"
     }
   }
 }
